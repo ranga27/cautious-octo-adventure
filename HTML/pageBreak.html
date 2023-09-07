@@ -1,0 +1,38 @@
+<style>
+  body {
+    counter-reset: page 10; 
+  }
+
+  @page {
+    @bottom-right {
+      content: counter(page);
+    }
+  }
+
+</style>
+
+<div class="section">  
+  <!-- Section 1 content -->
+</div>
+
+<div class="padding" style="height: 800px"></div> 
+
+<div class="section">
+  <!-- Section 2 content -->
+</div> 
+
+<div class="padding" style="height: 1200px"></div>
+
+<div class="section">
+  <!-- Section 3 content --> 
+</div>
+
+<script>
+  // Calculate padding height
+  const pageCount = 50; 
+  const currentPage = document.body.getCounterValue('page');
+  
+  const paddingHeight = (pageCount - currentPage) * 1200;
+  
+  document.querySelector('.padding').style.height = `${paddingHeight}px`; 
+</script>
